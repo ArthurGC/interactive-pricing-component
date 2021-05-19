@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="styles/styles.css">
+  <title>Frontend Mentor | Interactive pricing component</title>
+
+</head>
+<body>
+  <div class="hero">
+    <h1 class="title">Simple, traffic-based pricing</h1>
+    <p class="dsc">Sign-up for our 30-day trial. No credit card required.</p>
+    <div class="card">
+      <div class="card__header">
+        <p><span class="card__header__amount">100K</span><p class="card__header__views">PAGEVIEWS</p></p>
+        <p><span class="card__header__money"></span><p class="card__header__month">/ month</p></p>
+      </div>
+      <div class="card__slider">
+        <input type="range" name="card-range" id="card-range" class="card__slider__range">
+      </div>
+      <div class="card__mobile-money">
+        <p><span class="card__mobile-money__money">$16.00</span><p class="card__mobile-money__month">/ month</p></p>
+      </div>
+      <div class="card__plans">
+        <span class="card__plans__monthly">Monthly Billing 
+          <label class="switch">
+          <input type="checkbox">
+          <span class="slider round"></span>
+        </label>
+        </span>
+        <span class="card__plans__yearly">Yearly Billing</span>
+        <span class="card__plans__discount">25%</span>
+      </div>
+      <div class="card__check">
+        <p><span class="card__check__icon"><img src="images/icon-check.svg" alt="icon check"></span><span class="card__check__dsc">Unlimited websites</span></p>
+        <p><span class="card__check__icon"><img src="images/icon-check.svg" alt="icon check"></span><span class="card__check__dsc">100% data ownership</span></p>
+        <p><span class="card__check__icon"><img src="images/icon-check.svg" alt="icon check"></span><span class="card__check__dsc">Email reports</span></p>
+      </div>
+      <div class="card__btns">
+        <button class="card__btns__btn">Start my trial</button>
+      </div>
+    </div>
+  </div>
+<!-- 
+  
+   
+
+  Pageviews
+  $ /month
+
+  Monthly Billing
+  Yearly Billing 25% discount
+
+  Unlimited websites
+  100% data ownership
+  Email reports
+
+  Start my trial -->
+  
+
+</body>
+</html>

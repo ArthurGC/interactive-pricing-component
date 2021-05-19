@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap');
+
+$clr-sidebar-soft-cyan: hsl(174, 77%, 80%);
+$bg-slider-strong-cyan: hsl(174, 86%, 45%);
+$bg-discnt-light-grayish-red: hsl(14, 92%, 95%);
+$clr-dscntext-light-red: hsl(15, 100%, 70%);
+$clr-ctatext-plae-blue: hsl(226, 100%, 87%);
+
+$clr-white: hsl(0, 0%, 100%);
+$bg-main-pale-blue: hsl(230, 100%, 99%);
+$clr-emptyslider-light-grayish-blue: hsl(224, 65%, 95%);
+$bg-toggle-light-grayish-blue: hsl(223, 50%, 87%);
+$clr-text-grayish-blue: hsl(225, 20%, 60%);
+$bg-clr-dark-blue: hsl(227, 35%, 25%);
+
+:root{
+    --fs-100: 13px;
+    --fs-150: .9rem;
+    --fs-200: 1.25rem;
+    --fs-300: 2rem;
+}
+
+*, ::before, ::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+*{
+    font-family: 'Manrope', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+.hero::before{
+    content: '';
+    background-image: url(/images/pattern-circles.svg);
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 150px;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 100;
+}
+.hero{
+    background: $bg-main-pale-blue;
+    padding: 5.5rem 1rem;
+    width: 100%;
+    height: 100vh;
+}
+.title{
+    text-align: center;
+    font-size: var(--fs-200);
+    font-weight: 800;
+    color: $bg-clr-dark-blue;
+}
+.dsc{
+    text-align: center;
+    font-size: var(--fs-100);
+    color: $clr-text-grayish-blue;
+    padding: .5rem 5rem;
+    margin-bottom: 4rem;
+}
+.card{
+    background: $clr-white;
+    padding: 1.5rem 1rem 1.6rem;
+    border-radius: .3rem;
+    &__header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2.3rem;
+        &__amount,
+        &__views{
+            font-size: var(--fs-100);
+            color: $clr-text-grayish-blue;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+        &__month{
+            display: none;
+            font-size: var(--fs-100);
+            color: $clr-text-grayish-blue;
+            font-weight: 800;
+        }
+    }
+    &__slider{
+        text-align: center;
+        margin-bottom: 1.9rem;
+        &__range{
+            width: 100%;
+        }
+    }
+    &__mobile-money{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 2rem;
+        &__money{
+            font-size: var(--fs-300);
+            font-weight: 800;
+        }
+        &__month{
+            font-size: var(--fs-100);
+            color: $clr-text-grayish-blue;
+            font-weight: 800;
+        }
+    }
+    &__plans{
+        text-align: center;
+        margin-bottom: 2.3rem;
+        &__monthly,
+        &__yearly{
+            font-size: var(--fs-100);
+            color: $clr-text-grayish-blue;
+            font-weight: 600;
+        }
+        &__discount{
+            font-size: var(--fs-100);
+            color: $clr-dscntext-light-red;
+            background: $bg-discnt-light-grayish-red;
+            padding: 2px 10px;
+            border-radius: 20px;
+            font-weight: 800;
+        }
+    }
+    &__check{
+        border-top: 1px solid rgba($color: #000, $alpha: .1);
+        padding: 1rem;
+        text-align: center;
+        margin-bottom: .8rem;
+        p:nth-child(1),
+        p:nth-child(2){
+            margin-bottom: .4rem;
+        }
+        &__icon{
+            img{
+                width: 10px;
+                height: 10px;
+                margin-right: 1rem;
+            }
+        }
+        &__dsc{
+            font-size: var(--fs-100);
+            color: $clr-text-grayish-blue;
+            font-weight: 600;
+        }
+    }
+    &__btns{
+        text-align: center;
+        &__btn{
+            color: $clr-white;
+            background: $bg-clr-dark-blue;
+            padding: .65rem 3rem;
+            border-radius: 2rem;
+        }
+    }
+}
+
+.switch{
+    margin: 0 1rem;
+}

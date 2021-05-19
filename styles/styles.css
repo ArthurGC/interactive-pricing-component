@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@600;700&display=swap");
+:root {
+  --fs-100: 13px;
+  --fs-150: .9rem;
+  --fs-200: 1.25rem;
+  --fs-300: 2rem;
+}
+
+*, ::before, ::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+* {
+  font-family: "Manrope", sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.hero::before {
+  content: "";
+  background-image: url(/images/pattern-circles.svg);
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 150px;
+  height: 150px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 100;
+}
+
+.hero {
+  background: #fafbff;
+  padding: 5.5rem 1rem;
+  width: 100%;
+  height: 100vh;
+}
+
+.title {
+  text-align: center;
+  font-size: var(--fs-200);
+  font-weight: 800;
+  color: #293356;
+}
+
+.dsc {
+  text-align: center;
+  font-size: var(--fs-100);
+  color: #858fad;
+  padding: 0.5rem 5rem;
+  margin-bottom: 4rem;
+}
+
+.card {
+  background: white;
+  padding: 1.5rem 1rem 1.6rem;
+  border-radius: 0.3rem;
+}
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2.3rem;
+}
+.card__header__amount, .card__header__views {
+  font-size: var(--fs-100);
+  color: #858fad;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+.card__header__month {
+  display: none;
+  font-size: var(--fs-100);
+  color: #858fad;
+  font-weight: 800;
+}
+.card__slider {
+  text-align: center;
+  margin-bottom: 1.9rem;
+}
+.card__slider__range {
+  width: 100%;
+}
+.card__mobile-money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.card__mobile-money__money {
+  font-size: var(--fs-300);
+  font-weight: 800;
+}
+.card__mobile-money__month {
+  font-size: var(--fs-100);
+  color: #858fad;
+  font-weight: 800;
+}
+.card__plans {
+  text-align: center;
+  margin-bottom: 2.3rem;
+}
+.card__plans__monthly, .card__plans__yearly {
+  font-size: var(--fs-100);
+  color: #858fad;
+  font-weight: 600;
+}
+.card__plans__discount {
+  font-size: var(--fs-100);
+  color: #ff8c66;
+  background: #feece7;
+  padding: 2px 10px;
+  border-radius: 20px;
+  font-weight: 800;
+}
+.card__check {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  margin-bottom: 0.8rem;
+}
+.card__check p:nth-child(1),
+.card__check p:nth-child(2) {
+  margin-bottom: 0.4rem;
+}
+.card__check__icon img {
+  width: 10px;
+  height: 10px;
+  margin-right: 1rem;
+}
+.card__check__dsc {
+  font-size: var(--fs-100);
+  color: #858fad;
+  font-weight: 600;
+}
+.card__btns {
+  text-align: center;
+}
+.card__btns__btn {
+  color: white;
+  background: #293356;
+  padding: 0.65rem 3rem;
+  border-radius: 2rem;
+}
+
+.switch {
+  margin: 0 1rem;
+}/*# sourceMappingURL=styles.css.map */
