@@ -22,7 +22,7 @@ body {
 
 .hero::before {
   content: "";
-  background-image: url(/images/pattern-circles.svg);
+  background-image: url("https://raw.githubusercontent.com/ArthurGC/interactive-pricing-component/e49761016af3776f9f5612841b77da285c1d756c/images/pattern-circles.svg");
   position: absolute;
   top: 50px;
   left: 50%;
@@ -58,7 +58,7 @@ body {
 
 .card {
   background: white;
-  padding: 1.5rem 1rem 1.6rem;
+  padding: 1.5rem 1.5rem 1.6rem;
   border-radius: 0.3rem;
 }
 .card__header {
@@ -67,11 +67,20 @@ body {
   justify-content: center;
   margin-bottom: 2.3rem;
 }
+.card__header__amount {
+  margin-right: 5px;
+}
 .card__header__amount, .card__header__views {
   font-size: var(--fs-100);
   color: #858fad;
   font-weight: 800;
   letter-spacing: 1px;
+}
+.card__header__money {
+  display: none;
+  font-size: var(--fs-300);
+  font-weight: 800;
+  margin-right: 5px;
 }
 .card__header__month {
   display: none;
@@ -82,9 +91,18 @@ body {
 .card__slider {
   text-align: center;
   margin-bottom: 1.9rem;
+  position: relative;
 }
-.card__slider__range {
-  width: 100%;
+.card__slider .bar {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+  top: 7px;
+  height: 10px;
+  border-radius: 5px;
+  background: white;
+  overflow: hidden;
 }
 .card__mobile-money {
   display: flex;
@@ -95,6 +113,7 @@ body {
 .card__mobile-money__money {
   font-size: var(--fs-300);
   font-weight: 800;
+  margin-right: 5px;
 }
 .card__mobile-money__month {
   font-size: var(--fs-100);
@@ -110,13 +129,16 @@ body {
   color: #858fad;
   font-weight: 600;
 }
-.card__plans__discount {
-  font-size: var(--fs-100);
+.card__plans__discount, .card__plans__discount2 {
+  font-size: 10px;
   color: #ff8c66;
   background: #feece7;
   padding: 2px 10px;
   border-radius: 20px;
   font-weight: 800;
+}
+.card__plans__discount2 {
+  display: none;
 }
 .card__check {
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -145,9 +167,171 @@ body {
   color: white;
   background: #293356;
   padding: 0.65rem 3rem;
+  border: none;
   border-radius: 2rem;
+  transition: background 0.5s, color 0.5s;
+}
+.card__btns__btn:hover {
+  background: #10d5c2;
+  color: #293356;
 }
 
 .switch {
   margin: 0 1rem;
+}
+
+.card__slider input[type=range] {
+  -webkit-appearance: none;
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  outline: none;
+  background-color: transparent;
+}
+.card__slider .fill {
+  display: block;
+  width: 50%;
+  height: 100%;
+  background: #10d5c2;
+}
+.card__slider input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  padding: 10px;
+  background: #10d5c2;
+  background-image: url("https://raw.githubusercontent.com/ArthurGC/interactive-pricing-component/e49761016af3776f9f5612841b77da285c1d756c/images/icon-slider.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  margin-top: -5px;
+  cursor: pointer;
+  outline: none;
+}
+.card__slider input[type=range]::-webkit-slider-thumb:hover {
+  background: #a5f3eb;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch .checkbox {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #bdccff;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 12px;
+  width: 12px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+.checkbox:hover + .slider {
+  background-color: #a5f3eb;
+}
+
+.checkbox:checked + .slider {
+  background-color: #10d5c2;
+}
+
+.checkbox:focus + .slider {
+  box-shadow: 0 0 1px #10d5c2;
+}
+
+.checkbox:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media (min-width: 580px) {
+  :root {
+    --fs-80: .8rem;
+    --fs-100: .95rem;
+    --fs-200: 1.75rem;
+  }
+
+  .hero {
+    padding: 6.5rem 1rem;
+  }
+
+  .card {
+    margin-top: 5.1rem;
+    width: 535px;
+    margin-inline: auto;
+    padding: 3rem 3rem 1rem;
+  }
+  .card__header {
+    justify-content: space-between;
+  }
+  .card__header__money {
+    display: initial;
+  }
+  .card__header__month {
+    display: initial;
+  }
+  .card__slider {
+    margin-bottom: 3rem;
+  }
+  .card__mobile-money {
+    display: none;
+  }
+  .card__plans__monthly, .card__plans__yearly {
+    font-size: var(--fs-80);
+  }
+  .card__plans__discount {
+    display: none;
+  }
+  .card__plans__discount2 {
+    display: initial;
+    margin-left: 1rem;
+  }
+  .card__flex__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .card__check {
+    text-align: left;
+    border-top: none;
+  }
+  .card__check__dsc {
+    font-size: var(--fs-80);
+  }
 }/*# sourceMappingURL=styles.css.map */
